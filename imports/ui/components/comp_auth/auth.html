@@ -1,0 +1,43 @@
+<template name="comp_auth">
+	<div class="auth-layout">
+		{{#if currentUser}}
+			
+		{{else}}
+			{{> auth_signin}}
+			{{> auth_signup}}
+		{{/if}}
+	</div>
+</template>
+
+<template name="auth_signin">
+	<h1>Sign in</h1>
+	<form class="js-signin">
+		<input type="email" name="email" required="required" placeholder="Email Address">
+		<br>
+
+		<input type="password" name="password" required="required" placeholder="Password">
+		<br>
+		{{message}}
+		<br>
+		<input type="submit" value="Sign In">
+	</form>
+</template>
+
+<template name="auth_signup">
+	<form class="js-signup">
+		<input type="text" name="name" required="required" placeholder="Your name">
+		<br>
+
+		<input type="email" name="email" class="js-email" required="required" placeholder="Email Address">
+		<br>
+
+		<input type="password" name="password" required="required" placeholder="Password">
+		<br>
+
+		<input type="password" name="confirm" required="required" placeholder="Re-type Password">
+		<br>
+		{{message}}
+		<br>
+		<input type="submit" value="Sign Up">
+	</form>
+</template>

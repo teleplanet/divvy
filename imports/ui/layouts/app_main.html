@@ -1,7 +1,14 @@
 <template name="App_main">
-  <header><h1>Divvy</h1></header>
-  <main>
+<div class="wrapper">
+  <header class="header">
+  	{{> comp_header}}
+  </header>
+  <main class="main">
+  	<i class="material-icons">face</i>
     {{>Template.dynamic template=content}}
   </main>
-  <footer>Meteor</footer>
+  <footer class="footer">Meteor</footer>
+</div>
+
+ {{> comp_auth}}
 </template>

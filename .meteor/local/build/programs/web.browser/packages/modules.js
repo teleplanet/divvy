@@ -153,30 +153,39 @@ install("ddp-client");                                                       // 
 install("ddp");                                                              // 59
 install("ddp-server");                                                       // 60
 install("allow-deny");                                                       // 61
-install("insecure");                                                         // 62
-install("mongo");                                                            // 63
-install("blaze-html-templates");                                             // 64
-install("reactive-var");                                                     // 65
-install("jquery", "meteor/jquery/main.js");                                  // 66
-install("standard-minifier-css");                                            // 67
-install("standard-minifier-js");                                             // 68
-install("autopublish");                                                      // 69
-install("reactive-dict");                                                    // 70
-install("kadira:flow-router");                                               // 71
-install("deps");                                                             // 72
-install("htmljs");                                                           // 73
-install("observe-sequence");                                                 // 74
-install("blaze");                                                            // 75
-install("spacebars");                                                        // 76
-install("templating");                                                       // 77
-install("kadira:blaze-layout");                                              // 78
-install("webapp");                                                           // 79
-install("livedata");                                                         // 80
-install("hot-code-push");                                                    // 81
-install("launch-screen");                                                    // 82
-install("ui");                                                               // 83
-install("autoupdate");                                                       // 84
-                                                                             // 85
+install("mongo");                                                            // 62
+install("blaze-html-templates");                                             // 63
+install("reactive-var");                                                     // 64
+install("jquery", "meteor/jquery/main.js");                                  // 65
+install("standard-minifier-css");                                            // 66
+install("standard-minifier-js");                                             // 67
+install("reactive-dict");                                                    // 68
+install("kadira:flow-router");                                               // 69
+install("deps");                                                             // 70
+install("htmljs");                                                           // 71
+install("observe-sequence");                                                 // 72
+install("blaze");                                                            // 73
+install("spacebars");                                                        // 74
+install("templating");                                                       // 75
+install("kadira:blaze-layout");                                              // 76
+install("npm-bcrypt");                                                       // 77
+install("ddp-rate-limiter");                                                 // 78
+install("localstorage");                                                     // 79
+install("callback-hook");                                                    // 80
+install("accounts-base", "meteor/accounts-base/client_main.js");             // 81
+install("sha");                                                              // 82
+install("srp");                                                              // 83
+install("accounts-password");                                                // 84
+install("aldeed:simple-schema");                                             // 85
+install("webapp");                                                           // 86
+install("livedata");                                                         // 87
+install("hot-code-push");                                                    // 88
+install("launch-screen");                                                    // 89
+install("ui");                                                               // 90
+install("autoupdate");                                                       // 91
+install("service-configuration");                                            // 92
+install("mdg:validation-error");                                             // 93
+                                                                             // 94
 ///////////////////////////////////////////////////////////////////////////////
 
 },"process.js":["process",function(require,exports,module){
