@@ -1,7 +1,10 @@
 <template name="comp_auth">
 	<div class="auth-layout">
 		{{#if currentUser}}
-			
+			<div class="js-logout">
+				<i class="material-icons">exit_to_app</i>
+				Sign out
+			</div>
 		{{else}}
 			{{> auth_signin}}
 			{{> auth_signup}}

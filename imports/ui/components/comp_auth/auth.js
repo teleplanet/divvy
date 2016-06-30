@@ -29,6 +29,12 @@ Template.auth_signin.helpers({
 
 
 //-------------------EVENTS-----------------------------
+Template.comp_auth.events({
+	'click .js-logout' (event, instance) {
+		Meteor.logout();
+	}
+});
+
 //Sign In
 Template.auth_signin.events({
 	'submit .js-signin' (event, instance) {

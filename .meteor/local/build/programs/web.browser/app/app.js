@@ -27,32 +27,36 @@ Template["comp_auth"] = new Template("Template.comp_auth", (function() {        
   }, "\n		", Blaze.If(function() {                                                                                   // 7
     return Spacebars.call(view.lookup("currentUser"));                                                               // 8
   }, function() {                                                                                                    // 9
-    return "\n			\n		";                                                                                              // 10
-  }, function() {                                                                                                    // 11
+    return [ "\n			", HTML.DIV({                                                                                     // 10
+      "class": "js-logout"                                                                                           // 11
+    }, "\n				", HTML.I({                                                                                            // 12
+      "class": "material-icons"                                                                                      // 13
+    }, "exit_to_app"), "\n				Sign out\n			"), "\n		" ];                                                             // 14
+  }, function() {                                                                                                    // 15
     return [ "\n			", Spacebars.include(view.lookupTemplate("auth_signin")), "\n			", Spacebars.include(view.lookupTemplate("auth_signup")), "\n		" ];
-  }), "\n	");                                                                                                        // 13
-}));                                                                                                                 // 14
-                                                                                                                     // 15
-Template.__checkName("auth_signin");                                                                                 // 16
-Template["auth_signin"] = new Template("Template.auth_signin", (function() {                                         // 17
-  var view = this;                                                                                                   // 18
-  return [ HTML.Raw("<h1>Sign in</h1>\n	"), HTML.FORM({                                                              // 19
-    "class": "js-signin"                                                                                             // 20
+  }), "\n	");                                                                                                        // 17
+}));                                                                                                                 // 18
+                                                                                                                     // 19
+Template.__checkName("auth_signin");                                                                                 // 20
+Template["auth_signin"] = new Template("Template.auth_signin", (function() {                                         // 21
+  var view = this;                                                                                                   // 22
+  return [ HTML.Raw("<h1>Sign in</h1>\n	"), HTML.FORM({                                                              // 23
+    "class": "js-signin"                                                                                             // 24
   }, "\n		", HTML.Raw('<input type="email" name="email" required="required" placeholder="Email Address">'), "\n		", HTML.Raw("<br>"), "\n\n		", HTML.Raw('<input type="password" name="password" required="required" placeholder="Password">'), "\n		", HTML.Raw("<br>"), "\n		", Blaze.View("lookup:message", function() {
-    return Spacebars.mustache(view.lookup("message"));                                                               // 22
-  }), "\n		", HTML.Raw("<br>"), "\n		", HTML.Raw('<input type="submit" value="Sign In">'), "\n	") ];                 // 23
-}));                                                                                                                 // 24
-                                                                                                                     // 25
-Template.__checkName("auth_signup");                                                                                 // 26
-Template["auth_signup"] = new Template("Template.auth_signup", (function() {                                         // 27
-  var view = this;                                                                                                   // 28
-  return HTML.FORM({                                                                                                 // 29
-    "class": "js-signup"                                                                                             // 30
+    return Spacebars.mustache(view.lookup("message"));                                                               // 26
+  }), "\n		", HTML.Raw("<br>"), "\n		", HTML.Raw('<input type="submit" value="Sign In">'), "\n	") ];                 // 27
+}));                                                                                                                 // 28
+                                                                                                                     // 29
+Template.__checkName("auth_signup");                                                                                 // 30
+Template["auth_signup"] = new Template("Template.auth_signup", (function() {                                         // 31
+  var view = this;                                                                                                   // 32
+  return HTML.FORM({                                                                                                 // 33
+    "class": "js-signup"                                                                                             // 34
   }, HTML.Raw('\n		<input type="text" name="name" required="required" placeholder="Your name">\n		<br>\n\n		<input type="email" name="email" class="js-email" required="required" placeholder="Email Address">\n		<br>\n\n		<input type="password" name="password" required="required" placeholder="Password">\n		<br>\n\n		<input type="password" name="confirm" required="required" placeholder="Re-type Password">\n		<br>\n		'), Blaze.View("lookup:message", function() {
-    return Spacebars.mustache(view.lookup("message"));                                                               // 32
-  }), HTML.Raw('\n		<br>\n		<input type="submit" value="Sign Up">\n	'));                                             // 33
-}));                                                                                                                 // 34
-                                                                                                                     // 35
+    return Spacebars.mustache(view.lookup("message"));                                                               // 36
+  }), HTML.Raw('\n		<br>\n		<input type="submit" value="Sign Up">\n	'));                                             // 37
+}));                                                                                                                 // 38
+                                                                                                                     // 39
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 },"auth.css":["meteor/modules",function(require,exports,module){
@@ -122,65 +126,75 @@ Template.auth_signin.helpers({                                                  
 });                                                                                                                  // 24
                                                                                                                      //
 //-------------------EVENTS-----------------------------                                                             //
+Template.comp_auth.events({                                                                                          // 32
+	'click .js-logout': function () {                                                                                   // 33
+		function clickJsLogout(event, instance) {                                                                          // 32
+			Meteor.logout();                                                                                                  // 34
+		}                                                                                                                  // 35
+                                                                                                                     //
+		return clickJsLogout;                                                                                              // 32
+	}()                                                                                                                 // 32
+});                                                                                                                  // 32
+                                                                                                                     //
 //Sign In                                                                                                            //
-Template.auth_signin.events({                                                                                        // 33
-	'submit .js-signin': function () {                                                                                  // 34
-		function submitJsSignin(event, instance) {                                                                         // 33
-			event.preventDefault();                                                                                           // 35
+Template.auth_signin.events({                                                                                        // 39
+	'submit .js-signin': function () {                                                                                  // 40
+		function submitJsSignin(event, instance) {                                                                         // 39
+			event.preventDefault();                                                                                           // 41
                                                                                                                      //
-			var target = event.target;                                                                                        // 37
+			var target = event.target;                                                                                        // 43
                                                                                                                      //
-			var email = target.email.value;                                                                                   // 39
-			var password = target.password.value;                                                                             // 40
+			var email = target.email.value;                                                                                   // 45
+			var password = target.password.value;                                                                             // 46
                                                                                                                      //
-			Meteor.loginWithPassword(email, password, function (error, data) {                                                // 42
-				if (error) instance.message.set(error.reason);                                                                   // 43
-			});                                                                                                               // 45
-		}                                                                                                                  // 46
+			Meteor.loginWithPassword(email, password, function (error, data) {                                                // 48
+				if (error) instance.message.set(error.reason);                                                                   // 49
+			});                                                                                                               // 51
+		}                                                                                                                  // 52
                                                                                                                      //
-		return submitJsSignin;                                                                                             // 33
-	}()                                                                                                                 // 33
-});                                                                                                                  // 33
+		return submitJsSignin;                                                                                             // 39
+	}()                                                                                                                 // 39
+});                                                                                                                  // 39
                                                                                                                      //
 //Sign Up                                                                                                            //
-Template.auth_signup.events({                                                                                        // 50
-	'change .js-email': function () {                                                                                   // 51
-		function changeJsEmail(event, instance) {                                                                          // 50
-			var email = event.target.value;                                                                                   // 52
+Template.auth_signup.events({                                                                                        // 56
+	'change .js-email': function () {                                                                                   // 57
+		function changeJsEmail(event, instance) {                                                                          // 56
+			var email = event.target.value;                                                                                   // 58
                                                                                                                      //
 			//check if email account already exists                                                                           //
-			Meteor.call('auth.validateEmail', email, function (error, data) {                                                 // 55
-				if (error) {                                                                                                     // 56
-					console.log(error);                                                                                             // 57
-				} else {                                                                                                         // 58
+			Meteor.call('auth.validateEmail', email, function (error, data) {                                                 // 61
+				if (error) {                                                                                                     // 62
+					console.log(error);                                                                                             // 63
+				} else {                                                                                                         // 64
 					//if true - show error: Email Account already exists                                                            //
-					if (data) {}                                                                                                    // 60
+					if (data) {}                                                                                                    // 66
 					//false - Email validated - continue with registration                                                          //
-					else {}                                                                                                         // 60
-				}                                                                                                                // 67
-			});                                                                                                               // 68
-		}                                                                                                                  // 69
+					else {}                                                                                                         // 66
+				}                                                                                                                // 73
+			});                                                                                                               // 74
+		}                                                                                                                  // 75
                                                                                                                      //
-		return changeJsEmail;                                                                                              // 50
-	}(),                                                                                                                // 50
-	'submit .js-signup': function () {                                                                                  // 70
-		function submitJsSignup(event, instance) {                                                                         // 50
-			event.preventDefault();                                                                                           // 71
+		return changeJsEmail;                                                                                              // 56
+	}(),                                                                                                                // 56
+	'submit .js-signup': function () {                                                                                  // 76
+		function submitJsSignup(event, instance) {                                                                         // 56
+			event.preventDefault();                                                                                           // 77
                                                                                                                      //
-			var target = event.target;                                                                                        // 73
+			var target = event.target;                                                                                        // 79
                                                                                                                      //
-			var user = {                                                                                                      // 76
-				email: target.email.value,                                                                                       // 77
-				password: target.password.value,                                                                                 // 78
-				profile: {                                                                                                       // 79
-					name: target.name.value                                                                                         // 80
-				}                                                                                                                // 79
-			};                                                                                                                // 76
+			var user = {                                                                                                      // 82
+				email: target.email.value,                                                                                       // 83
+				password: target.password.value,                                                                                 // 84
+				profile: {                                                                                                       // 85
+					name: target.name.value                                                                                         // 86
+				}                                                                                                                // 85
+			};                                                                                                                // 82
                                                                                                                      //
-			Accounts.createUser(user, function (error) {                                                                      // 84
-				if (error) {                                                                                                     // 85
-					instance.message.set(error.reason);                                                                             // 86
-				} else {                                                                                                         // 87
+			Accounts.createUser(user, function (error) {                                                                      // 90
+				if (error) {                                                                                                     // 91
+					instance.message.set(error.reason);                                                                             // 92
+				} else {                                                                                                         // 93
 					/* Meteor.call( 'sendVerificationLink', ( error, response ) => {                                                //
         if ( error ) {                                                                                               //
           Bert.alert( error.reason, 'danger' );                                                                      //
@@ -188,13 +202,13 @@ Template.auth_signup.events({                                                   
           Bert.alert( 'Welcome!', 'success' );                                                                       //
         }                                                                                                            //
       });*/                                                                                                          //
-				}                                                                                                                // 95
-			});                                                                                                               // 96
-		}                                                                                                                  // 97
+				}                                                                                                                // 101
+			});                                                                                                               // 102
+		}                                                                                                                  // 103
                                                                                                                      //
-		return submitJsSignup;                                                                                             // 50
-	}()                                                                                                                 // 50
-});                                                                                                                  // 50
+		return submitJsSignup;                                                                                             // 56
+	}()                                                                                                                 // 56
+});                                                                                                                  // 56
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 }]},"comp_header":{"header.html":["./template.header.js",function(require,exports,module){
@@ -315,7 +329,7 @@ Template["App_main"] = new Template("Template.App_main", (function() {          
     "class": "header"                                                                                                // 8
   }, "\n  	", Spacebars.include(view.lookupTemplate("comp_header")), "\n  "), "\n  ", HTML.MAIN({                    // 9
     "class": "main"                                                                                                  // 10
-  }, "\n  	", HTML.Raw('<i class="material-icons">face</i>'), "\n    ", Blaze._TemplateWith(function() {             // 11
+  }, "\n    ", Blaze._TemplateWith(function() {                                                                      // 11
     return {                                                                                                         // 12
       template: Spacebars.call(view.lookup("content"))                                                               // 13
     };                                                                                                               // 14
