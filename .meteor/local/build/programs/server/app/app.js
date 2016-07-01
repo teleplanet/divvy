@@ -34,18 +34,19 @@ Accounts.validateNewUser(function (user) {                                 // 2
   // Return true to allow user creation to proceed                         //
   return true;                                                             // 14
 });                                                                        // 15
-Meteor.methods({                                                           // 16
-  'auth.validateEmail': function authValidateEmail(email) {                // 17
+                                                                           //
+Meteor.methods({                                                           // 17
+  'auth.validateEmail': function authValidateEmail(email) {                // 18
     //check if email account already exists                                //
-    if (Accounts.findUserByEmail(email)) {                                 // 19
+    if (Accounts.findUserByEmail(email)) {                                 // 20
       //return false if email account exists                               //
-      return false;                                                        // 21
-    } else {                                                               // 22
+      return false;                                                        // 22
+    } else {                                                               // 23
       //return true if email account does not exist                        //
-      return true;                                                         // 24
-    }                                                                      // 25
-  }                                                                        // 26
-});                                                                        // 16
+      return true;                                                         // 25
+    }                                                                      // 26
+  }                                                                        // 27
+});                                                                        // 17
 /////////////////////////////////////////////////////////////////////////////
 
 },"publish.js":function(){

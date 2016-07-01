@@ -6,7 +6,6 @@ import '../../ui/pages/home/home.js';
 
 
 FlowRouter.route('/', {
-
   action: function() {
     BlazeLayout.render("App_main", {content: "Home"});
   }

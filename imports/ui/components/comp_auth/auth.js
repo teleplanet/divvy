@@ -6,16 +6,19 @@ import { ReactiveVar } from 'meteor/reactive-var';
 
 
 //-------------------ONCREATE--------------------------
+//SIGN UP
 Template.auth_signup.onCreated(function onCreated(){
 	this.message = new ReactiveVar('');
 	this.check_message = new ReactiveVar('');
 });
 
+//SIGN IN
 Template.auth_signin.onCreated(function onCreated(){
 	this.message = new ReactiveVar('');
 });
 
 //-------------------HELPERS----------------------------
+//AUTHENTICATION
 Template.comp_auth.helpers({
 	authInProcess: function() {
 	    return Meteor.loggingIn();
@@ -25,6 +28,7 @@ Template.comp_auth.helpers({
 	}
 });
 
+//SIGN UP
 Template.auth_signup.helpers({
 	message(){
 		return Template.instance().message.get();
@@ -34,6 +38,7 @@ Template.auth_signup.helpers({
 	}
 });
 
+//SIGN IN
 Template.auth_signin.helpers({
 	message(){
 		return Template.instance().message.get();

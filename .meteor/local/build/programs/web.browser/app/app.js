@@ -47,7 +47,7 @@ Template.__checkName("auth_signin");                                            
 Template["auth_signin"] = new Template("Template.auth_signin", (function() {                                         // 27
   var view = this;                                                                                                   // 28
   return [ HTML.Raw("<h1>Sign in</h1>\n	"), HTML.FORM({                                                              // 29
-    "class": "js-signin"                                                                                             // 30
+    "class": "form-main-style js-signin"                                                                             // 30
   }, "\n		", HTML.Raw('<input type="email" name="email" required="required" placeholder="Email Address">'), "\n		", HTML.Raw("<br>"), "\n		", HTML.Raw('<input type="password" name="password" required="required" placeholder="Password">'), "\n		", HTML.Raw("<br>"), "\n		", Blaze.View("lookup:message", function() {
     return Spacebars.mustache(view.lookup("message"));                                                               // 32
   }), "\n		", HTML.Raw("<br>"), "\n		", HTML.Raw('<input type="submit" value="Sign In">'), "\n	") ];                 // 33
@@ -57,7 +57,7 @@ Template.__checkName("auth_signup");                                            
 Template["auth_signup"] = new Template("Template.auth_signup", (function() {                                         // 37
   var view = this;                                                                                                   // 38
   return HTML.FORM({                                                                                                 // 39
-    "class": "js-signup"                                                                                             // 40
+    "class": "form-main-style js-signup"                                                                             // 40
   }, HTML.Raw('\n		<input type="text" name="name" required="required" placeholder="Your name">\n		<br>\n\n		<input type="email" name="email" class="js-email" required="required" placeholder="Email Address">\n		<br>\n		'), Blaze.View("lookup:checkMessage", function() {
     return Spacebars.mustache(view.lookup("checkMessage"));                                                          // 42
   }), HTML.Raw('<br>\n		<input type="password" name="password" required="required" placeholder="Password">\n		<br>\n\n		<input type="password" name="confirm" required="required" placeholder="Re-type Password">\n		<br>\n		'), Blaze.View("lookup:message", function() {
@@ -96,148 +96,153 @@ module.import('./auth.html');module.import('./auth.css');var Accounts;module.imp
                                                                                                                      // 5
                                                                                                                      //
 //-------------------ONCREATE--------------------------                                                              //
-Template.auth_signup.onCreated(function () {                                                                         // 9
-	function onCreated() {                                                                                              // 9
-		this.message = new ReactiveVar('');                                                                                // 10
-		this.check_message = new ReactiveVar('');                                                                          // 11
-	}                                                                                                                   // 12
+//SIGN UP                                                                                                            //
+Template.auth_signup.onCreated(function () {                                                                         // 10
+	function onCreated() {                                                                                              // 10
+		this.message = new ReactiveVar('');                                                                                // 11
+		this.check_message = new ReactiveVar('');                                                                          // 12
+	}                                                                                                                   // 13
                                                                                                                      //
-	return onCreated;                                                                                                   // 9
-}());                                                                                                                // 9
+	return onCreated;                                                                                                   // 10
+}());                                                                                                                // 10
                                                                                                                      //
-Template.auth_signin.onCreated(function () {                                                                         // 14
-	function onCreated() {                                                                                              // 14
-		this.message = new ReactiveVar('');                                                                                // 15
-	}                                                                                                                   // 16
+//SIGN IN                                                                                                            //
+Template.auth_signin.onCreated(function () {                                                                         // 16
+	function onCreated() {                                                                                              // 16
+		this.message = new ReactiveVar('');                                                                                // 17
+	}                                                                                                                   // 18
                                                                                                                      //
-	return onCreated;                                                                                                   // 14
-}());                                                                                                                // 14
+	return onCreated;                                                                                                   // 16
+}());                                                                                                                // 16
                                                                                                                      //
 //-------------------HELPERS----------------------------                                                             //
-Template.comp_auth.helpers({                                                                                         // 19
-	authInProcess: function () {                                                                                        // 20
-		function authInProcess() {                                                                                         // 20
-			return Meteor.loggingIn();                                                                                        // 21
-		}                                                                                                                  // 22
-                                                                                                                     //
-		return authInProcess;                                                                                              // 20
-	}(),                                                                                                                // 20
-	canShow: function () {                                                                                              // 23
-		function canShow() {                                                                                               // 23
-			return !!Meteor.user();                                                                                           // 24
+//AUTHENTICATION                                                                                                     //
+Template.comp_auth.helpers({                                                                                         // 22
+	authInProcess: function () {                                                                                        // 23
+		function authInProcess() {                                                                                         // 23
+			return Meteor.loggingIn();                                                                                        // 24
 		}                                                                                                                  // 25
                                                                                                                      //
-		return canShow;                                                                                                    // 23
-	}()                                                                                                                 // 23
-});                                                                                                                  // 19
+		return authInProcess;                                                                                              // 23
+	}(),                                                                                                                // 23
+	canShow: function () {                                                                                              // 26
+		function canShow() {                                                                                               // 26
+			return !!Meteor.user();                                                                                           // 27
+		}                                                                                                                  // 28
                                                                                                                      //
-Template.auth_signup.helpers({                                                                                       // 28
-	message: function () {                                                                                              // 29
-		function message() {                                                                                               // 28
-			return Template.instance().message.get();                                                                         // 30
-		}                                                                                                                  // 31
+		return canShow;                                                                                                    // 26
+	}()                                                                                                                 // 26
+});                                                                                                                  // 22
                                                                                                                      //
-		return message;                                                                                                    // 28
-	}(),                                                                                                                // 28
-	checkMessage: function () {                                                                                         // 32
-		function checkMessage() {                                                                                          // 28
-			return Template.instance().check_message.get();                                                                   // 33
-		}                                                                                                                  // 34
+//SIGN UP                                                                                                            //
+Template.auth_signup.helpers({                                                                                       // 32
+	message: function () {                                                                                              // 33
+		function message() {                                                                                               // 32
+			return Template.instance().message.get();                                                                         // 34
+		}                                                                                                                  // 35
                                                                                                                      //
-		return checkMessage;                                                                                               // 28
-	}()                                                                                                                 // 28
-});                                                                                                                  // 28
+		return message;                                                                                                    // 32
+	}(),                                                                                                                // 32
+	checkMessage: function () {                                                                                         // 36
+		function checkMessage() {                                                                                          // 32
+			return Template.instance().check_message.get();                                                                   // 37
+		}                                                                                                                  // 38
                                                                                                                      //
-Template.auth_signin.helpers({                                                                                       // 37
-	message: function () {                                                                                              // 38
-		function message() {                                                                                               // 37
-			return Template.instance().message.get();                                                                         // 39
-		}                                                                                                                  // 40
+		return checkMessage;                                                                                               // 32
+	}()                                                                                                                 // 32
+});                                                                                                                  // 32
                                                                                                                      //
-		return message;                                                                                                    // 37
-	}()                                                                                                                 // 37
-});                                                                                                                  // 37
+//SIGN IN                                                                                                            //
+Template.auth_signin.helpers({                                                                                       // 42
+	message: function () {                                                                                              // 43
+		function message() {                                                                                               // 42
+			return Template.instance().message.get();                                                                         // 44
+		}                                                                                                                  // 45
+                                                                                                                     //
+		return message;                                                                                                    // 42
+	}()                                                                                                                 // 42
+});                                                                                                                  // 42
                                                                                                                      //
 //-------------------EVENTS-----------------------------                                                             //
-Template.comp_auth.events({                                                                                          // 45
-	'click .js-logout': function () {                                                                                   // 46
-		function clickJsLogout(event, instance) {                                                                          // 45
-			Meteor.logout();                                                                                                  // 47
-		}                                                                                                                  // 48
+Template.comp_auth.events({                                                                                          // 50
+	'click .js-logout': function () {                                                                                   // 51
+		function clickJsLogout(event, instance) {                                                                          // 50
+			Meteor.logout();                                                                                                  // 52
+		}                                                                                                                  // 53
                                                                                                                      //
-		return clickJsLogout;                                                                                              // 45
-	}()                                                                                                                 // 45
-});                                                                                                                  // 45
+		return clickJsLogout;                                                                                              // 50
+	}()                                                                                                                 // 50
+});                                                                                                                  // 50
                                                                                                                      //
 //Sign In                                                                                                            //
-Template.auth_signin.events({                                                                                        // 52
-	'submit .js-signin': function () {                                                                                  // 53
-		function submitJsSignin(event, instance) {                                                                         // 52
-			event.preventDefault();                                                                                           // 54
+Template.auth_signin.events({                                                                                        // 57
+	'submit .js-signin': function () {                                                                                  // 58
+		function submitJsSignin(event, instance) {                                                                         // 57
+			event.preventDefault();                                                                                           // 59
                                                                                                                      //
-			var target = event.target;                                                                                        // 56
+			var target = event.target;                                                                                        // 61
                                                                                                                      //
-			var email = target.email.value;                                                                                   // 58
-			var password = target.password.value;                                                                             // 59
+			var email = target.email.value;                                                                                   // 63
+			var password = target.password.value;                                                                             // 64
                                                                                                                      //
-			Meteor.loginWithPassword(email, password, function (error, data) {                                                // 61
-				if (error) instance.message.set(error.reason);                                                                   // 62
-			});                                                                                                               // 64
-		}                                                                                                                  // 65
+			Meteor.loginWithPassword(email, password, function (error, data) {                                                // 66
+				if (error) instance.message.set(error.reason);                                                                   // 67
+			});                                                                                                               // 69
+		}                                                                                                                  // 70
                                                                                                                      //
-		return submitJsSignin;                                                                                             // 52
-	}()                                                                                                                 // 52
-});                                                                                                                  // 52
+		return submitJsSignin;                                                                                             // 57
+	}()                                                                                                                 // 57
+});                                                                                                                  // 57
                                                                                                                      //
 //Sign Up                                                                                                            //
-Template.auth_signup.events({                                                                                        // 69
-	'change .js-email': function () {                                                                                   // 70
-		function changeJsEmail(event, instance) {                                                                          // 69
-			var email = event.target.value;                                                                                   // 71
+Template.auth_signup.events({                                                                                        // 74
+	'change .js-email': function () {                                                                                   // 75
+		function changeJsEmail(event, instance) {                                                                          // 74
+			var email = event.target.value;                                                                                   // 76
                                                                                                                      //
 			//check if email account already exists                                                                           //
-			Meteor.call('auth.validateEmail', email, function (error, data) {                                                 // 74
-				if (error) {                                                                                                     // 75
-					console.log(error);                                                                                             // 76
-				} else {                                                                                                         // 77
+			Meteor.call('auth.validateEmail', email, function (error, data) {                                                 // 79
+				if (error) {                                                                                                     // 80
+					console.log(error);                                                                                             // 81
+				} else {                                                                                                         // 82
 					//false - Email validated - continue with registration                                                          //
-					if (data) {                                                                                                     // 79
-						instance.check_message.set("Valid Email");                                                                     // 80
-					}                                                                                                               // 81
+					if (data) {                                                                                                     // 84
+						instance.check_message.set("Valid Email");                                                                     // 85
+					}                                                                                                               // 86
 					//if true - show error: Email Account already exists                                                            //
-					else {                                                                                                          // 79
-							instance.check_message.set("Email already exists");                                                           // 84
-						}                                                                                                              // 85
-				}                                                                                                                // 86
-			});                                                                                                               // 87
-		}                                                                                                                  // 88
+					else {                                                                                                          // 84
+							instance.check_message.set("Email already exists");                                                           // 89
+						}                                                                                                              // 90
+				}                                                                                                                // 91
+			});                                                                                                               // 92
+		}                                                                                                                  // 93
                                                                                                                      //
-		return changeJsEmail;                                                                                              // 69
-	}(),                                                                                                                // 69
-	'submit .js-signup': function () {                                                                                  // 89
-		function submitJsSignup(event, instance) {                                                                         // 69
-			event.preventDefault();                                                                                           // 90
+		return changeJsEmail;                                                                                              // 74
+	}(),                                                                                                                // 74
+	'submit .js-signup': function () {                                                                                  // 94
+		function submitJsSignup(event, instance) {                                                                         // 74
+			event.preventDefault();                                                                                           // 95
                                                                                                                      //
 			//get html form                                                                                                   //
-			var target = event.target;                                                                                        // 93
+			var target = event.target;                                                                                        // 98
                                                                                                                      //
 			// Check for equality with the password inputs                                                                    //
-			if (user.password != target.confirm.value) return false;                                                          // 96
+			if (user.password != target.confirm.value) return false;                                                          // 101
                                                                                                                      //
 			//create user object                                                                                              //
-			var user = {                                                                                                      // 100
-				email: target.email.value,                                                                                       // 101
-				password: target.password.value,                                                                                 // 102
-				profile: {                                                                                                       // 103
-					name: target.name.value                                                                                         // 104
-				}                                                                                                                // 103
-			};                                                                                                                // 100
+			var user = {                                                                                                      // 105
+				email: target.email.value,                                                                                       // 106
+				password: target.password.value,                                                                                 // 107
+				profile: {                                                                                                       // 108
+					name: target.name.value                                                                                         // 109
+				}                                                                                                                // 108
+			};                                                                                                                // 105
                                                                                                                      //
 			//create new user account                                                                                         //
-			Accounts.createUser(user, function (error) {                                                                      // 109
-				if (error) {                                                                                                     // 110
-					instance.message.set(error.reason);                                                                             // 111
-				} else {                                                                                                         // 112
+			Accounts.createUser(user, function (error) {                                                                      // 114
+				if (error) {                                                                                                     // 115
+					instance.message.set(error.reason);                                                                             // 116
+				} else {                                                                                                         // 117
 					/* Meteor.call( 'sendVerificationLink', ( error, response ) => {                                                //
         if ( error ) {                                                                                               //
           Bert.alert( error.reason, 'danger' );                                                                      //
@@ -245,13 +250,13 @@ Template.auth_signup.events({                                                   
           Bert.alert( 'Welcome!', 'success' );                                                                       //
         }                                                                                                            //
       });*/                                                                                                          //
-				}                                                                                                                // 120
-			});                                                                                                               // 121
-		}                                                                                                                  // 122
+				}                                                                                                                // 125
+			});                                                                                                               // 126
+		}                                                                                                                  // 127
                                                                                                                      //
-		return submitJsSignup;                                                                                             // 69
-	}()                                                                                                                 // 69
-});                                                                                                                  // 69
+		return submitJsSignup;                                                                                             // 74
+	}()                                                                                                                 // 74
+});                                                                                                                  // 74
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 }]},"comp_header":{"header.html":["./template.header.js",function(require,exports,module){
@@ -399,7 +404,7 @@ module.exports = require("meteor/modules").addStyles(                           
                                                                                                                      // 4
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-}],"app_main.js":["./app_main.html","./app_main.css","../components/comp_header/header.js","../components/comp_auth/auth.js",function(require,exports,module){
+}],"app_main.js":["./app_main.html","./app_main.css","../css/form.css","../components/comp_header/header.js","../components/comp_auth/auth.js",function(require,exports,module){
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                                   //
@@ -407,23 +412,40 @@ module.exports = require("meteor/modules").addStyles(                           
 //                                                                                                                   //
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                                                                                                      //
-module.import('./app_main.html');module.import('./app_main.css');module.import('../components/comp_header/header.js');module.import('../components/comp_auth/auth.js');
+module.import('./app_main.html');module.import('./app_main.css');module.import('../css/form.css');module.import('../components/comp_header/header.js');module.import('../components/comp_auth/auth.js');
                                                                                                                      // 2
-                                                                                                                     // 3
+                                                                                                                     //
                                                                                                                      // 4
                                                                                                                      //
-Template.App_main.onCreated(function () {                                                                            // 6
-	function app_mainCreate() {                                                                                         // 6
-		var handle = Meteor.subscribe('user.details');                                                                     // 7
+                                                                                                                     // 6
+                                                                                                                     // 7
                                                                                                                      //
-		Tracker.autorun(function () {                                                                                      // 9
-			var isReady = handle.ready();                                                                                     // 10
-			console.log('Handle is ' + (isReady ? 'ready' : 'not ready'));                                                    // 11
-		});                                                                                                                // 12
-	}                                                                                                                   // 13
+Template.App_main.onCreated(function () {                                                                            // 9
+	function app_mainCreate() {                                                                                         // 9
+		var handle = Meteor.subscribe('user.details');                                                                     // 10
                                                                                                                      //
-	return app_mainCreate;                                                                                              // 6
-}());                                                                                                                // 6
+		Tracker.autorun(function () {                                                                                      // 12
+			var isReady = handle.ready();                                                                                     // 13
+			console.log('Handle is ' + (isReady ? 'ready' : 'not ready'));                                                    // 14
+		});                                                                                                                // 15
+	}                                                                                                                   // 16
+                                                                                                                     //
+	return app_mainCreate;                                                                                              // 9
+}());                                                                                                                // 9
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+}]},"css":{"form.css":["meteor/modules",function(require,exports,module){
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                   //
+// imports/ui/css/form.css                                                                                           //
+//                                                                                                                   //
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                                                                     //
+module.exports = require("meteor/modules").addStyles(                                                                // 1
+  ".form-main-style{\n    font: 95% Arial, Helvetica, sans-serif;\n    max-width: 400px;\n    margin: 10px auto;\n    padding: 16px;\n    background: #F7F7F7;\n}\n.form-main-style h1{\n    background: #43D1AF;\n    padding: 20px 0;\n    font-size: 140%;\n    font-weight: 300;\n    text-align: center;\n    color: #fff;\n    margin: -16px -16px 16px -16px;\n}\n.form-main-style input[type=\"text\"],\n.form-main-style input[type=\"date\"],\n.form-main-style input[type=\"password\"],\n.form-main-style input[type=\"datetime\"],\n.form-main-style input[type=\"email\"],\n.form-main-style input[type=\"number\"],\n.form-main-style input[type=\"search\"],\n.form-main-style input[type=\"time\"],\n.form-main-style input[type=\"url\"],\n.form-main-style textarea,\n.form-main-style select\n{\n    -webkit-transition: all 0.30s ease-in-out;\n    -moz-transition: all 0.30s ease-in-out;\n    -ms-transition: all 0.30s ease-in-out;\n    -o-transition: all 0.30s ease-in-out;\n    outline: none;\n    box-sizing: border-box;\n    -webkit-box-sizing: border-box;\n    -moz-box-sizing: border-box;\n    width: 100%;\n    background: #fff;\n    margin-bottom: 4%;\n    border: 1px solid #ccc;\n    padding: 3%;\n    color: #555;\n    font: 95% Arial, Helvetica, sans-serif;\n}\n.form-main-style input[type=\"text\"]:focus,\n.form-main-style input[type=\"password\"]:focus,\n.form-main-style input[type=\"date\"]:focus,\n.form-main-style input[type=\"datetime\"]:focus,\n.form-main-style input[type=\"email\"]:focus,\n.form-main-style input[type=\"number\"]:focus,\n.form-main-style input[type=\"search\"]:focus,\n.form-main-style input[type=\"time\"]:focus,\n.form-main-style input[type=\"url\"]:focus,\n.form-main-style textarea:focus,\n.form-main-style select:focus\n{\n    box-shadow: 0 0 5px #43D1AF;\n    padding: 3%;\n    border: 1px solid #43D1AF;\n}\n\n.form-main-style input[type=\"submit\"],\n.form-main-style input[type=\"button\"]{\n    box-sizing: border-box;\n    -webkit-box-sizing: border-box;\n    -moz-box-sizing: border-box;\n    width: 100%;\n    padding: 3%;\n    background: #43D1AF;\n    border-bottom: 2px solid #30C29E;\n    border-top-style: none;\n    border-right-style: none;\n    border-left-style: none;   \n    color: #fff;\n}\n.form-main-style input[type=\"submit\"]:hover,\n.form-main-style input[type=\"button\"]:hover{\n    background: #2EBC99;\n}"
+);                                                                                                                   // 3
+                                                                                                                     // 4
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 }]}},"startup":{"client":{"index.js":["./routes.js",function(require,exports,module){
@@ -452,14 +474,13 @@ var FlowRouter;module.import('meteor/kadira:flow-router',{"FlowRouter":function(
                                                                                                                      // 5
                                                                                                                      //
 FlowRouter.route('/', {                                                                                              // 8
+  action: function () {                                                                                              // 9
+    function action() {                                                                                              // 9
+      BlazeLayout.render("App_main", { content: "Home" });                                                           // 10
+    }                                                                                                                // 11
                                                                                                                      //
-  action: function () {                                                                                              // 10
-    function action() {                                                                                              // 10
-      BlazeLayout.render("App_main", { content: "Home" });                                                           // 11
-    }                                                                                                                // 12
-                                                                                                                     //
-    return action;                                                                                                   // 10
-  }()                                                                                                                // 10
+    return action;                                                                                                   // 9
+  }()                                                                                                                // 9
 });                                                                                                                  // 8
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

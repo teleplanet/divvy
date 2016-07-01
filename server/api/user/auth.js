@@ -13,6 +13,7 @@ Accounts.validateNewUser((user) => {
   // Return true to allow user creation to proceed
   return true;
 });
+
 Meteor.methods({
   'auth.validateEmail'(email){
     //check if email account already exists

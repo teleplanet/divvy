@@ -1,5 +1,8 @@
 import './app_main.html';
 import './app_main.css';
+
+import '../css/form.css';
+
 import '../components/comp_header/header.js';
 import '../components/comp_auth/auth.js';
 
