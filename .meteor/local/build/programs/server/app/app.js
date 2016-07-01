@@ -56,7 +56,7 @@ Meteor.methods({                                                           // 16
 //                                                                         //
 /////////////////////////////////////////////////////////////////////////////
                                                                            //
-Meteor.publish('user.name', function (userid) {                            // 1
+Meteor.publish('user.details', function (userid) {                         // 1
   // Validate the arguments to be what we expect                           //
                                                                            //
   // Select only the users that match the array of IDs passed in           //

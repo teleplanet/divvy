@@ -8,6 +8,7 @@ import { ReactiveVar } from 'meteor/reactive-var';
 //-------------------ONCREATE--------------------------
 Template.auth_signup.onCreated(function onCreated(){
 	this.message = new ReactiveVar('');
+	this.check_message = new ReactiveVar('');
 });
 
 Template.auth_signin.onCreated(function onCreated(){
@@ -15,9 +16,21 @@ Template.auth_signin.onCreated(function onCreated(){
 });
 
 //-------------------HELPERS----------------------------
+Template.comp_auth.helpers({
+	authInProcess: function() {
+	    return Meteor.loggingIn();
+	},
+	canShow: function() {
+	    return !!Meteor.user();
+	}
+});
+
 Template.auth_signup.helpers({
 	message(){
 		return Template.instance().message.get();
+	},
+	checkMessage(){
+		return Template.instance().check_message.get();
 	}
 });
 
@@ -62,13 +75,13 @@ Template.auth_signup.events({
 			if(error){
 				console.log(error);
 			}else{
-				//if true - show error: Email Account already exists
-				if(data){
-
-				}
 				//false - Email validated - continue with registration
+				if(data){
+					instance.check_message.set("Valid Email");
+				}
+				//if true - show error: Email Account already exists
 				else{
-
+					instance.check_message.set("Email already exists");
 				}
 			}
 		});
@@ -76,9 +89,14 @@ Template.auth_signup.events({
 	'submit .js-signup' (event, instance) {
 		event.preventDefault();
 
+		//get html form
 		const target = event.target;
 
+		// Check for equality with the password inputs
+	    if (user.password != target.confirm.value)
+	        return false;
 
+		//create user object
 		let user = {
 		  	email: target.email.value,
 		  	password: target.password.value,
@@ -87,6 +105,7 @@ Template.auth_signup.events({
 		  	},
 		};
 
+		//create new user account
 		Accounts.createUser( user, ( error ) => {
 		  if ( error ) {
 		    instance.message.set(error.reason);

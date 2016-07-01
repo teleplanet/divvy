@@ -1,4 +1,4 @@
-Meteor.publish('user.name', function (userid) {
+Meteor.publish('user.details', function (userid) {
   // Validate the arguments to be what we expect
 
 

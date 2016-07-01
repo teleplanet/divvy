@@ -4,7 +4,7 @@ import '../components/comp_header/header.js';
 import '../components/comp_auth/auth.js';
 
 Template.App_main.onCreated(function app_mainCreate(){
-	const handle = Meteor.subscribe('user.name');
+	const handle = Meteor.subscribe('user.details');
 	
 	Tracker.autorun(() => {
 	  const isReady = handle.ready();
