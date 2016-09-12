@@ -1,6 +1,6 @@
 {
   "format": "javascript-image-pre1",
-  "arch": "os",
+  "arch": "os.windows.x86_32",
   "load": [
     {
       "sourceMap": "packages/underscore.js.map",
@@ -119,6 +119,14 @@
       "path": "packages/ddp-client.js"
     },
     {
+      "sourceMap": "packages/rate-limit.js.map",
+      "path": "packages/rate-limit.js"
+    },
+    {
+      "sourceMap": "packages/ddp-rate-limiter.js.map",
+      "path": "packages/ddp-rate-limiter.js"
+    },
+    {
       "node_modules": "/C/Users/admin/AppData/Local/.meteor/packages/logging/1.0.13_1/npm/node_modules",
       "sourceMap": "packages/logging.js.map",
       "path": "packages/logging.js"
@@ -186,9 +194,6 @@
       "path": "packages/webapp.js"
     },
     {
-      "path": "packages/autopublish.js"
-    },
-    {
       "sourceMap": "packages/callback-hook.js.map",
       "path": "packages/callback-hook.js"
     },
@@ -207,9 +212,6 @@
     {
       "sourceMap": "packages/binary-heap.js.map",
       "path": "packages/binary-heap.js"
-    },
-    {
-      "path": "packages/insecure.js"
     },
     {
       "node_modules": "/C/Users/admin/AppData/Local/.meteor/packages/mongo/1.1.9_1/npm/node_modules",
@@ -241,6 +243,36 @@
       "path": "packages/kadira_blaze-layout.js"
     },
     {
+      "node_modules": "/C/Users/admin/AppData/Local/.meteor/packages/npm-bcrypt/0.8.7/npm/node_modules",
+      "sourceMap": "packages/npm-bcrypt.js.map",
+      "path": "packages/npm-bcrypt.js"
+    },
+    {
+      "sourceMap": "packages/accounts-base.js.map",
+      "path": "packages/accounts-base.js"
+    },
+    {
+      "sourceMap": "packages/sha.js.map",
+      "path": "packages/sha.js"
+    },
+    {
+      "sourceMap": "packages/srp.js.map",
+      "path": "packages/srp.js"
+    },
+    {
+      "node_modules": "/C/Users/admin/AppData/Local/.meteor/packages/email/1.0.14_1/npm/node_modules",
+      "sourceMap": "packages/email.js.map",
+      "path": "packages/email.js"
+    },
+    {
+      "sourceMap": "packages/accounts-password.js.map",
+      "path": "packages/accounts-password.js"
+    },
+    {
+      "sourceMap": "packages/aldeed_simple-schema.js.map",
+      "path": "packages/aldeed_simple-schema.js"
+    },
+    {
       "path": "packages/livedata.js"
     },
     {
@@ -262,6 +294,14 @@
     {
       "sourceMap": "app/app.js.map",
       "path": "app/app.js"
+    },
+    {
+      "sourceMap": "packages/service-configuration.js.map",
+      "path": "packages/service-configuration.js"
+    },
+    {
+      "sourceMap": "packages/mdg_validation-error.js.map",
+      "path": "packages/mdg_validation-error.js"
     }
   ]
 }

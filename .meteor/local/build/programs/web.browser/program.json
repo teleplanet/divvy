@@ -57,11 +57,11 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/packages/modules.js?hash=bbeffac981e54c9048d6f768672a84af60f1ba7e",
+      "url": "/packages/modules.js?hash=9323a0b6a50336210adeb18ac5c0b8ca0ca5f89c",
       "sourceMap": "packages/modules.js.map",
-      "sourceMapUrl": "/packages/bbeffac981e54c9048d6f768672a84af60f1ba7e.map",
-      "size": 52722,
-      "hash": "bbeffac981e54c9048d6f768672a84af60f1ba7e"
+      "sourceMapUrl": "/packages/9323a0b6a50336210adeb18ac5c0b8ca0ca5f89c.map",
+      "size": 53469,
+      "hash": "9323a0b6a50336210adeb18ac5c0b8ca0ca5f89c"
     },
     {
       "path": "packages/es5-shim.js",
@@ -320,15 +320,6 @@
       "hash": "11ff6d1a797cb3d6608a96e8ab0bd82a4947ff49"
     },
     {
-      "path": "packages/insecure.js",
-      "where": "client",
-      "type": "js",
-      "cacheable": true,
-      "url": "/packages/insecure.js?hash=5679de9a1eaf70c1c18f8c3bf9493ebe2e4caa33",
-      "size": 241,
-      "hash": "5679de9a1eaf70c1c18f8c3bf9493ebe2e4caa33"
-    },
-    {
       "path": "packages/mongo.js",
       "where": "client",
       "type": "js",
@@ -387,15 +378,6 @@
       "url": "/packages/standard-minifier-js.js?hash=555d6f310158f363207df43e0353de4a4883d7af",
       "size": 256,
       "hash": "555d6f310158f363207df43e0353de4a4883d7af"
-    },
-    {
-      "path": "packages/autopublish.js",
-      "where": "client",
-      "type": "js",
-      "cacheable": true,
-      "url": "/packages/autopublish.js?hash=bc72b03fb56c2a80ef076107d3c27287cbc7ca08",
-      "size": 244,
-      "hash": "bc72b03fb56c2a80ef076107d3c27287cbc7ca08"
     },
     {
       "path": "packages/reactive-dict.js",
@@ -495,6 +477,101 @@
       "hash": "493d22b2043f66d6b3694baa790b62a701aaec33"
     },
     {
+      "path": "packages/npm-bcrypt.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/npm-bcrypt.js?hash=999fb0a24b0b2cc3ed14998aaea9a590002759b2",
+      "size": 246,
+      "hash": "999fb0a24b0b2cc3ed14998aaea9a590002759b2"
+    },
+    {
+      "path": "packages/ddp-rate-limiter.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/ddp-rate-limiter.js?hash=af60434f2a5f818b825b7a15c155f7afd5ac47ec",
+      "size": 252,
+      "hash": "af60434f2a5f818b825b7a15c155f7afd5ac47ec"
+    },
+    {
+      "path": "packages/localstorage.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/localstorage.js?hash=0b3ae3298494da2289abab2377342a1054cfca0b",
+      "sourceMap": "packages/localstorage.js.map",
+      "sourceMapUrl": "/packages/0b3ae3298494da2289abab2377342a1054cfca0b.map",
+      "size": 6638,
+      "hash": "0b3ae3298494da2289abab2377342a1054cfca0b"
+    },
+    {
+      "path": "packages/callback-hook.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/callback-hook.js?hash=fff7fdef0707c85900b21f766a4b6c65bf278ff4",
+      "sourceMap": "packages/callback-hook.js.map",
+      "sourceMapUrl": "/packages/fff7fdef0707c85900b21f766a4b6c65bf278ff4.map",
+      "size": 14275,
+      "hash": "fff7fdef0707c85900b21f766a4b6c65bf278ff4"
+    },
+    {
+      "path": "packages/accounts-base.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/accounts-base.js?hash=3f6353a90da402397ef0b889e3812a40c0a71704",
+      "sourceMap": "packages/accounts-base.js.map",
+      "sourceMapUrl": "/packages/3f6353a90da402397ef0b889e3812a40c0a71704.map",
+      "size": 153200,
+      "hash": "3f6353a90da402397ef0b889e3812a40c0a71704"
+    },
+    {
+      "path": "packages/sha.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/sha.js?hash=569709b873cd1ba2cef4f2b0732cb4923ff5ce20",
+      "sourceMap": "packages/sha.js.map",
+      "sourceMapUrl": "/packages/569709b873cd1ba2cef4f2b0732cb4923ff5ce20.map",
+      "size": 19230,
+      "hash": "569709b873cd1ba2cef4f2b0732cb4923ff5ce20"
+    },
+    {
+      "path": "packages/srp.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/srp.js?hash=94d5df94b266ef008d0425c828f1715512e429ef",
+      "sourceMap": "packages/srp.js.map",
+      "sourceMapUrl": "/packages/94d5df94b266ef008d0425c828f1715512e429ef.map",
+      "size": 173114,
+      "hash": "94d5df94b266ef008d0425c828f1715512e429ef"
+    },
+    {
+      "path": "packages/accounts-password.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/accounts-password.js?hash=26c5712042d53cb92bed4571735603904d1ec8bd",
+      "sourceMap": "packages/accounts-password.js.map",
+      "sourceMapUrl": "/packages/26c5712042d53cb92bed4571735603904d1ec8bd.map",
+      "size": 32057,
+      "hash": "26c5712042d53cb92bed4571735603904d1ec8bd"
+    },
+    {
+      "path": "packages/aldeed_simple-schema.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/aldeed_simple-schema.js?hash=a36531b7660faa5522e7fade0b3f4daf5b4b6641",
+      "sourceMap": "packages/aldeed_simple-schema.js.map",
+      "sourceMapUrl": "/packages/a36531b7660faa5522e7fade0b3f4daf5b4b6641.map",
+      "size": 383353,
+      "hash": "a36531b7660faa5522e7fade0b3f4daf5b4b6641"
+    },
+    {
       "path": "packages/webapp.js",
       "where": "client",
       "type": "js",
@@ -559,37 +636,293 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/packages/global-imports.js?hash=23fb7e9616c2394cca991d547c0dfc372782a7be",
-      "size": 1203,
-      "hash": "23fb7e9616c2394cca991d547c0dfc372782a7be"
+      "url": "/packages/global-imports.js?hash=bfad367cdc7cc3001561de9a5f4d8935d55496bf",
+      "size": 1369,
+      "hash": "bfad367cdc7cc3001561de9a5f4d8935d55496bf"
     },
     {
       "path": "app/app.js",
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/app/app.js?hash=30685d156379bfa610559257401d331c6cc48177",
+      "url": "/app/app.js?hash=009359074e5b6e8c232140053c0035a3b0efd385",
       "sourceMap": "app/app.js.map",
-      "sourceMapUrl": "/app/30685d156379bfa610559257401d331c6cc48177.map",
-      "size": 15085,
-      "hash": "30685d156379bfa610559257401d331c6cc48177"
+      "sourceMapUrl": "/app/009359074e5b6e8c232140053c0035a3b0efd385.map",
+      "size": 59776,
+      "hash": "009359074e5b6e8c232140053c0035a3b0efd385"
+    },
+    {
+      "path": "packages/service-configuration.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/service-configuration.js?hash=331fe144dc8f69e5e44f23dd74b9de74ed80c6f3",
+      "sourceMap": "packages/service-configuration.js.map",
+      "sourceMapUrl": "/packages/331fe144dc8f69e5e44f23dd74b9de74ed80c6f3.map",
+      "size": 4728,
+      "hash": "331fe144dc8f69e5e44f23dd74b9de74ed80c6f3"
+    },
+    {
+      "path": "packages/mdg_validation-error.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/packages/mdg_validation-error.js?hash=579bd084aa8fa0bd15b629357dcc95fc382d9629",
+      "sourceMap": "packages/mdg_validation-error.js.map",
+      "sourceMapUrl": "/packages/579bd084aa8fa0bd15b629357dcc95fc382d9629.map",
+      "size": 8317,
+      "hash": "579bd084aa8fa0bd15b629357dcc95fc382d9629"
     },
     {
       "path": "merged-stylesheets.css",
       "where": "client",
       "type": "css",
       "cacheable": true,
-      "url": "/merged-stylesheets.css?hash=20ae2c8d51b2507244e598844414ecdec2615ce3",
+      "url": "/merged-stylesheets.css?hash=17bf907dee6aecd765da1126ea95b86723151765",
       "sourceMap": "merged-stylesheets.css.map",
-      "sourceMapUrl": "/20ae2c8d51b2507244e598844414ecdec2615ce3.map",
-      "size": 30,
-      "hash": "20ae2c8d51b2507244e598844414ecdec2615ce3"
+      "sourceMapUrl": "/17bf907dee6aecd765da1126ea95b86723151765.map",
+      "size": 1298,
+      "hash": "17bf907dee6aecd765da1126ea95b86723151765"
+    },
+    {
+      "path": "app/fonts/icons/LICENSE.txt",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/icons/LICENSE.txt",
+      "size": 20164,
+      "hash": "540e43aea993ada0c9b4b50ae5843494d8b7cc28"
+    },
+    {
+      "path": "app/fonts/icons/Material-Design-Icons.eot",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/icons/Material-Design-Icons.eot",
+      "size": 102112,
+      "hash": "fc1bc1337f3313ead42b22a67a142d4e0d356b3a"
+    },
+    {
+      "path": "app/fonts/icons/Material-Design-Icons.svg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/icons/Material-Design-Icons.svg",
+      "size": 330095,
+      "hash": "757d54367f0df16a783769eec0ba974f42bd7dce"
+    },
+    {
+      "path": "app/fonts/icons/Material-Design-Icons.ttf",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/icons/Material-Design-Icons.ttf",
+      "size": 101892,
+      "hash": "2cb66ac73a2d32ae8d2f807f705eff26fcf93323"
+    },
+    {
+      "path": "app/fonts/icons/Material-Design-Icons.woff",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/icons/Material-Design-Icons.woff",
+      "size": 101968,
+      "hash": "ee77184556f7b66fcb8ee9496f81ac62f792d7dc"
+    },
+    {
+      "path": "app/fonts/icons/Material-Design-Icons.woff2",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/icons/Material-Design-Icons.woff2",
+      "size": 33220,
+      "hash": "2355cb4f824d070bc42c4ce6b97cab71af1f4ca2"
+    },
+    {
+      "path": "app/fonts/roboto/Roboto-Bold.eot",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/roboto/Roboto-Bold.eot",
+      "size": 20966,
+      "hash": "a76cd602f5188b9fbd4ba7443dcb9c064e3dbf10"
+    },
+    {
+      "path": "app/fonts/roboto/Roboto-Bold.ttf",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/roboto/Roboto-Bold.ttf",
+      "size": 127744,
+      "hash": "47327df0f35e7cd7c8645874897a7449697544ae"
+    },
+    {
+      "path": "app/fonts/roboto/Roboto-Bold.woff",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/roboto/Roboto-Bold.woff",
+      "size": 62876,
+      "hash": "ee99cd87a59a9a5d4092c83232bb3eec67547425"
+    },
+    {
+      "path": "app/fonts/roboto/Roboto-Bold.woff2",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/roboto/Roboto-Bold.woff2",
+      "size": 49976,
+      "hash": "933b866d09c2b087707a98dab64b3888865eeb96"
+    },
+    {
+      "path": "app/fonts/roboto/Roboto-Light.eot",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/roboto/Roboto-Light.eot",
+      "size": 20940,
+      "hash": "42fe156996197e5eb0c0264c5d1bb3b4681f4595"
+    },
+    {
+      "path": "app/fonts/roboto/Roboto-Light.ttf",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/roboto/Roboto-Light.ttf",
+      "size": 126792,
+      "hash": "e321c183e2b75ee19813892b7bac8d7c411cb88a"
+    },
+    {
+      "path": "app/fonts/roboto/Roboto-Light.woff",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/roboto/Roboto-Light.woff",
+      "size": 62316,
+      "hash": "6300f659be9e834ab263efe2fb3c581d48b1e7b2"
+    },
+    {
+      "path": "app/fonts/roboto/Roboto-Light.woff2",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/roboto/Roboto-Light.woff2",
+      "size": 49380,
+      "hash": "bbdc28b887400fcb340b504ec2904993af42a5d7"
+    },
+    {
+      "path": "app/fonts/roboto/Roboto-Medium.eot",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/roboto/Roboto-Medium.eot",
+      "size": 21364,
+      "hash": "1517f4b6e1c5d0e5198f937557253aac8fab0416"
+    },
+    {
+      "path": "app/fonts/roboto/Roboto-Medium.ttf",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/roboto/Roboto-Medium.ttf",
+      "size": 127488,
+      "hash": "6060ca726b9760b76f7c347dce9d2fa1fe42ec92"
+    },
+    {
+      "path": "app/fonts/roboto/Roboto-Medium.woff",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/roboto/Roboto-Medium.woff",
+      "size": 62980,
+      "hash": "d45f84922131364989ad6578c7a06b6b4fc22c34"
+    },
+    {
+      "path": "app/fonts/roboto/Roboto-Medium.woff2",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/roboto/Roboto-Medium.woff2",
+      "size": 50224,
+      "hash": "6cc1b73571af9e827c4e7e91418f476703cd4c4b"
+    },
+    {
+      "path": "app/fonts/roboto/Roboto-Regular.eot",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/roboto/Roboto-Regular.eot",
+      "size": 21320,
+      "hash": "77ae3e980ec03863ebe2587a8ef9ddfd06941db0"
+    },
+    {
+      "path": "app/fonts/roboto/Roboto-Regular.ttf",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/roboto/Roboto-Regular.ttf",
+      "size": 126072,
+      "hash": "824b5480c977a8166e177e5357d13164ccc45f47"
+    },
+    {
+      "path": "app/fonts/roboto/Roboto-Regular.woff",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/roboto/Roboto-Regular.woff",
+      "size": 61736,
+      "hash": "74734dde8d94e7268170f9b994dedfbdcb5b3a15"
+    },
+    {
+      "path": "app/fonts/roboto/Roboto-Regular.woff2",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/roboto/Roboto-Regular.woff2",
+      "size": 49236,
+      "hash": "ed1558b0541f5e01ce48c7db1588371b990eec19"
+    },
+    {
+      "path": "app/fonts/roboto/Roboto-Thin.eot",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/roboto/Roboto-Thin.eot",
+      "size": 21659,
+      "hash": "0790a51a848dbe7292c98f9d0459218bf1a8ffdd"
+    },
+    {
+      "path": "app/fonts/roboto/Roboto-Thin.ttf",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/roboto/Roboto-Thin.ttf",
+      "size": 127584,
+      "hash": "173ed64528b4d010a76d8d38deb1d7e7eed58eda"
+    },
+    {
+      "path": "app/fonts/roboto/Roboto-Thin.woff",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/roboto/Roboto-Thin.woff",
+      "size": 61628,
+      "hash": "fbc3e71d456c96667d8082ab910e3946ef89240b"
+    },
+    {
+      "path": "app/fonts/roboto/Roboto-Thin.woff2",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/fonts/roboto/Roboto-Thin.woff2",
+      "size": 48524,
+      "hash": "2449e3dac5ddb7c3da8bb07450493b62d052758c"
     },
     {
       "path": "head.html",
       "where": "internal",
       "type": "head",
-      "hash": "da142ca208e1513757fbe96940f73a213127c2fc"
+      "hash": "2c22a4b343148fecefecc5bf3784730bac258830"
     }
   ]
 }
